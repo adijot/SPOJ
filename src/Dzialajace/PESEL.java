@@ -7,6 +7,7 @@
         D
         N
         */
+// Indywidualny pakiet nie podawać w SPOJ ponieważ wywali błąd!
 package Dzialajace;
 
 import java.io.BufferedReader;
