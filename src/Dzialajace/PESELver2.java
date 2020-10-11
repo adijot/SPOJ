@@ -7,24 +7,18 @@
         D
         N
         */
-package Projekty;
+package Dzialajace;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
 public class PESELver2 {
-
-
-    public static int pobierzPESEL() throws java.lang.Exception {
-        BufferedReader daneWejsciiowe = new BufferedReader (new InputStreamReader (System.in));
-        String s = daneWejsciiowe.readLine();
-        String[] pesel = new String[11];
+    public static int pobierzPESEL(String s) throws java.lang.Exception {
+        String[] pesel = s.split("");
         int [] PESEL = new int[pesel.length];
         int[] sprawdzPesel = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1};
         int suma = 0;
-
         for (int i = 0; i < 11; i++){
-            pesel[i] = String.valueOf(s.charAt(i));
             PESEL[i] = Integer.parseInt(pesel[i]);
             suma += PESEL[i] * sprawdzPesel[i];
         }
@@ -43,7 +37,8 @@ public class PESELver2 {
         int iloscProb = Integer.parseInt(daneWejsciiowe.readLine());
 
         for (int i = 0; i < iloscProb; i++){
-            int PESEL = pobierzPESEL();
+            String podajPESEL = daneWejsciiowe.readLine();
+            int PESEL = pobierzPESEL(podajPESEL);
             sprawdzPESEL(PESEL);
         }
     }
