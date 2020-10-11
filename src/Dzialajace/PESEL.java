@@ -13,6 +13,7 @@ package Dzialajace;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+// W przypadku SPOJ nazwa klasy class Main
 public class PESEL {
 
     public static void sprawdzPESEL(int sumaPESEL) throws Exception {
