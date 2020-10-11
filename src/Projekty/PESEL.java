@@ -8,52 +8,41 @@
         N
         */
 package Projekty;
-
-import java.util.Scanner;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
 public class PESEL {
-    public static int pobierzPESEL(Scanner daneWejsciowe) throws java.lang.Exception {
+    public static int pobierzPESEL() throws java.lang.Exception {
+        BufferedReader daneWejsciiowe = new BufferedReader (new InputStreamReader (System.in));
+        String s = daneWejsciiowe.readLine();
+        String[] pesel = new String[11];
+        int [] PESEL = new int[pesel.length];
+        int[] sprawdzPesel = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1};
+        int suma = 0;
 
-        if (daneWejsciowe.hasNext()) {
-            int suma = 0;
-            String pesel = daneWejsciowe.nextLine();
-            String[] PESEL = pesel.split("");
-            int[] intPESEL = new int[PESEL.length];
-            int[] sprawdzPesel = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1};
-            for (int i = 0; i < PESEL.length; i++) {
-                intPESEL[i] = Integer.parseInt(PESEL[i]);
-                suma += intPESEL[i] * sprawdzPesel[i];
-            }
-            return suma;
+        for (int i = 0; i < 11; i++){
+            pesel[i] = String.valueOf(s.charAt(i));
+            PESEL[i] = Integer.parseInt(pesel[i]);
+            suma += PESEL[i] * sprawdzPesel[i];
         }
-        return 1;
+        return suma;
     }
-
-    public static String sprawdzPESEL(int sumaPESEL) throws java.lang.Exception {
+    public static void sprawdzPESEL(int sumaPESEL) throws java.lang.Exception {
         if (sumaPESEL % 10 == 0) {
-            return "D";
+            System.out.println("D");
         } else {
-            return "N";
+            System.out.println("N");
         }
     }
 
     public static void main(String[] args) throws java.lang.Exception {
-        Scanner ileProb = new Scanner(System.in);
-        int ileRazy = 0;
-        if (ileProb.hasNextInt()) {
-            ileRazy = ileProb.nextInt();
-            int PESEL;
-            String[] wynikTablica = new String[ileRazy];
+        BufferedReader daneWejsciiowe = new BufferedReader (new InputStreamReader (System.in));
+        int iloscProb = Integer.parseInt(daneWejsciiowe.readLine());
 
-            for (int i = 0; i < ileRazy; i++) {
-                Scanner podajPesel = new Scanner(System.in);
-                PESEL = pobierzPESEL(podajPesel);
-                wynikTablica[i] = sprawdzPESEL(PESEL);
-            }
-            for (String elementy : wynikTablica) {
-                System.out.println(elementy);
-            }
-
+        for (int i = 0; i <iloscProb; i++){
+            int suma = pobierzPESEL();
+            sprawdzPESEL(suma);
 
         }
     }
