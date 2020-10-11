@@ -12,7 +12,9 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class PESEL {
+public class PESELver2 {
+
+
     public static int pobierzPESEL() throws java.lang.Exception {
         BufferedReader daneWejsciiowe = new BufferedReader (new InputStreamReader (System.in));
         String s = daneWejsciiowe.readLine();
@@ -40,10 +42,9 @@ public class PESEL {
         BufferedReader daneWejsciiowe = new BufferedReader (new InputStreamReader (System.in));
         int iloscProb = Integer.parseInt(daneWejsciiowe.readLine());
 
-        for (int i = 0; i <iloscProb; i++){
-            int suma = pobierzPESEL();
-            sprawdzPESEL(suma);
-
+        for (int i = 0; i < iloscProb; i++){
+            int PESEL = pobierzPESEL();
+            sprawdzPESEL(PESEL);
         }
     }
 }
