@@ -1,13 +1,4 @@
-/*Input:
-2
-44051401458
-12345678901
-
-        Output:
-        D
-        N
-        */
-package Dzialajace;
+package Dzialajace.PESEL;
 import java.util.*;
 import java.lang.*;
 import java.io.*;

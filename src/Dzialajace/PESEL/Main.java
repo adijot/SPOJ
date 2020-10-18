@@ -1,20 +1,7 @@
-/*Input:
-2
-44051401458
-12345678901
+package Dzialajace.PESEL;
+import java.io.*;
 
-        Output:
-        D
-        N
-        */
-// Indywidualny pakiet nie podawać w SPOJ ponieważ wywali błąd!
-package Dzialajace;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-// W przypadku SPOJ nazwa klasy class Main
-public class PESEL {
+public class Main {
 
     public static void sprawdzPESEL(int sumaPESEL) throws Exception {
         if (sumaPESEL % 10 == 0) {

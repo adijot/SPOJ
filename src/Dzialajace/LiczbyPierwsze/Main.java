@@ -1,32 +1,7 @@
-/*PRIME_T - Liczby Pierwsze
-        Sprawdź, które spośród danych liczb są liczbami pierwszymi
+package Dzialajace.LiczbyPierwsze;
+import java.io.*;
 
-        Input
-        n - liczba testów n<100000, w kolejnych liniach n liczb z przedziału [1..10000]
-
-        Output
-        Dla każdej liczby słowo TAK, jeśli liczba ta jest pierwsza, słowo: NIE, w przeciwnym wypadku.
-
-        Example
-        Input:
-        3
-        11
-        1
-        4
-
-        Output:
-        TAK
-        NIE
-        NIE*/
-package Dzialajace;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Scanner;
-
-public class LiczbyPierwsze {
-
+public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader daneWejsciowe = new BufferedReader(new InputStreamReader(System.in));
